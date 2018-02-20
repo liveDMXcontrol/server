@@ -1,15 +1,15 @@
 import pyenttec as pyenttec
-
+import time
 dmx = pyenttec.select_port()
 
+red_value = int(raw_input('red: '))
+green_value = int(raw_input('green: '))
+blue_value = int(raw_input('blue: '))
 
-def make_4bar_red():
-    dmx.dmx_frame[64] = 255
-    dmx.dmx_frame[67] = 255
-    dmx.dmx_frame[70] = 255
-    dmx.dmx_frame[73] = 255
+dmx.dmx_frame[144] = red_value
+dmx.dmx_frame[145] = green_value
+dmx.dmx_frame[146] = blue_value
 
-    dmx.render()
+dmx.render()
 
-
-make_4bar_red()
+time.sleep(0.1)
