@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>dmx lighting control</title>
+
+        <style>
+            body {
+                margin-top: 3rem;
+                display: flex;
+                flex-direction: row;
+            }
+            a {
+                margin: 0.25rem;
+                display: block;
+                border: 1px solid #444;
+                border-radius: 3px;
+                width: 2rem;
+                height: 2rem;
+            }
+            #white { background-color: rgb(255, 255, 255); }
+            #red { background-color: rgb(255, 0, 0); }
+            #green { background-color: rgb(0, 255, 0); }
+            #blue { background-color: rgb(0, 0, 255); }
+            #purple { background-color: rgb(255, 0, 255); }
+            #teal { background-color: rgb(0, 255, 255); }
+            #yellow { background-color: rgb(255, 255, 0); }
+            #off { background-color: rgb(0, 0, 0); }
+        </style>
+    </head>
+
+    <body>
+        <a href="/white" id="white"></a>
+        <a href="/red" id="red"></a>
+        <a href="/green" id="green"></a>
+        <a href="/blue" id="blue"></a>
+        <a href="/purple" id="purple"></a>
+        <a href="/teal" id="teal"></a>
+        <a href="/yellow" id="yellow"></a>
+        <a href="/off" id="off"></a>
+    </body>
+</html>
