@@ -1,9 +1,11 @@
 import sys
 from flask import abort, Flask, render_template, request, Response
+from flask_cors import CORS
 sys.path.insert(0, 'pyenttec/')
 import pyenttec
 
 app = Flask(__name__)
+CORS(app)
 dmx = pyenttec.select_port()
 
 # {
