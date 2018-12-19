@@ -101,4 +101,4 @@ ENV/
 
 # mypy
 .mypy_cache/
-test_json.sh
+test_json.*
