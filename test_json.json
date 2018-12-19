@@ -1,0 +1,7 @@
+{
+  "channels_list": [
+    {"channel": 50, "value": 255},
+    {"channel": 51, "value": 0},
+    {"channel": 52, "value": 0}
+  ]
+}
