@@ -5,6 +5,8 @@ sys.path.insert(0, 'pyenttec/')
 import pyenttec
 
 app = Flask(__name__)
+if __name__ == '__main__':
+    app.run(host="0.0.0.0")
 CORS(app)
 dmx = pyenttec.select_port()
 
