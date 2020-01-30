@@ -1,0 +1,15 @@
+[Unit]
+Description=gunicorn daemon for /var/www/dmx/server/server.py
+After=network.target
+
+[Service]
+User=pi
+Group=www-data
+RuntimeDirectory=gunicorn
+WorkingDirectory=/var/www/dmx/server
+ExecStart=/usr/local/bin/gunicorn --bind=unix:/tmp/dmx.sock server:app
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+
+[Install]
+WantedBy=multi-user.target
