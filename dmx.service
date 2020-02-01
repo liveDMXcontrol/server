@@ -3,11 +3,10 @@ Description=gunicorn daemon for /var/www/dmx/server/server.py
 After=network.target
 
 [Service]
-User=pi
+User=chip
 Group=www-data
-RuntimeDirectory=gunicorn
-WorkingDirectory=/var/www/dmx/server
-ExecStart=/usr/local/bin/gunicorn --bind=unix:/tmp/dmx.sock server:app
+WorkingDirectory=/home/chip/liveDMXcontrol
+ExecStart=/home/chip/liveDMXcontrol/venv/bin/gunicorn -workers=2 --bind=unix:/var/sockets/dmx.sock server:app
 ExecReload=/bin/kill -s HUP $MAINPID
 ExecStop=/bin/kill -s TERM $MAINPID
 
