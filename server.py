@@ -8,7 +8,7 @@ app = Flask(__name__)
 if __name__ == '__main__':
     app.run(host="0.0.0.0")
 CORS(app)
-dmx = pyenttec.select_port()
+dmx = pyenttec.DMXConnection('/dev/serial/by-id/usb-DMXking.com_DMX_USB_PRO_6AUTNPNW-if00-port0')
 
 # {
 #   "channels_list": [
@@ -25,7 +25,7 @@ def jsonHandler():
         print(contents)
         for content in contents:
             # print(content['channel'],': ',content['value'])
-            dmx.dmx_frame[content['channel']] = content['value']
+            dmx.dmx_frame[content['channel']-1] = content['value']
 
         dmx.render()
         return Response(status=204, mimetype='application/json')
