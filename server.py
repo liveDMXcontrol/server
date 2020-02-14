@@ -18,7 +18,7 @@ dmx = pyenttec.DMXConnection('/dev/serial/by-id/usb-DMXking.com_DMX_USB_PRO_6AUT
 #   ]
 # }
 
-@app.route('/', methods=['POST'])
+@app.route('/api', methods=['POST'])
 def jsonHandler():
     try:
         contents = request.get_json()['channels_list']
